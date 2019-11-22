@@ -1,0 +1,14 @@
+.container li {
+  margin: 10px 0px 0px 10px;
+}
+
+.container a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.container a:hover {
+  text-decoration: underline;
+  color: #fde91a;
+}

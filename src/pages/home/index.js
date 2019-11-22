@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import api from './../../services/api';
+import './styles.css';
 
 export default class Home extends Component {
+  state = {
+    movies: [],
+  };
+
   componentDidMount() {
     this.loadMovies();
   }
@@ -9,13 +14,25 @@ export default class Home extends Component {
   loadMovies = async () => {
     const response = await api.get(`/films`);
 
-    console.log(response.data.results);
+    const { results } = response.data;
+
+    this.setState({ movies: results });
   };
 
   render() {
+    const { movies } = this.state;
+
     return (
       <div className="container">
-        <p>MOVIE LIST GOES HERE</p>
+        <ul>
+          {movies.map(movie => (
+            <li key={movie.episode_id}>
+              <a href="/">
+                Episode {movie.episode_id} : {movie.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

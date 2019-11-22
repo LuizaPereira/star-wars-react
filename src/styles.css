@@ -27,3 +27,22 @@ body {
   border-radius: 10px;
   color: white;
 }
+
+.container a {
+  text-decoration: none;
+}
+
+.container ul {
+  list-style-type: none;
+}
+
+.container h1,
+h2 {
+  text-align: center;
+}
+
+.container h4 {
+  margin-top: 20px;
+  padding: 50px;
+  text-align: center;
+}

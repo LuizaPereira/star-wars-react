@@ -22,7 +22,7 @@ export default class Header extends Component {
         <nav>
           <ul>
             {routes.map(route => (
-              <li>
+              <li key={route.title}>
                 <a href={route.path}>{route.title}</a>
               </li>
             ))}
