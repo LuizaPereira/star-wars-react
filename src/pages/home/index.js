@@ -13,6 +13,10 @@ export default class Home extends Component {
   };
 
   render() {
-    return <p>Batata</p>;
+    return (
+      <div className="container">
+        <p>MOVIE LIST GOES HERE</p>
+      </div>
+    );
   }
 }
