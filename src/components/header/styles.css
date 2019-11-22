@@ -1,0 +1,42 @@
+.title-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-bar h1 {
+  font-size: 6rem;
+  color: black;
+  text-shadow: 2px 2px 2px #fde91a;
+}
+
+.title-bar nav {
+  margin-top: 10px;
+  border: solid 10px black;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.title-bar ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+.title-bar a {
+  padding: 1em;
+}
+
+.title-bar a:link,
+.title-bar a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.title-bar a:hover {
+  text-decoration: underline;
+  background: darken(black, 10%);
+  color: #fde91a;
+  border-radius: 10px;
+}
