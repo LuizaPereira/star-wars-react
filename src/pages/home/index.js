@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from './../../services/api';
-import './styles.css';
+import './styles.scss';
 
 export default class Home extends Component {
   state = {
