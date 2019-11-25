@@ -1,42 +1,73 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
 .title-bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.title-bar h1 {
-  font-size: 6rem;
-  color: black;
-  text-shadow: 2px 2px 2px #fde91a;
-}
+  h1 {
+    font-size: 6rem;
+    color: black;
+    text-shadow: 2px 2px 2px $yellow;
 
-.title-bar nav {
-  margin-top: 10px;
-  border: solid 10px black;
-  background-color: black;
-  border-radius: 10px;
-}
+    @media (max-width: 700px) {
+      font-size: 3rem;
+      margin: 10px 0px;
+    }
+  }
 
-.title-bar ul {
-  display: flex;
-  padding: 0;
-  list-style-type: none;
-}
+  nav {
+    margin-top: 10px;
+    border: solid 10px black;
+    background-color: black;
+    border-radius: 10px;
 
-.title-bar a {
-  padding: 1em;
-}
+    ul {
+      display: flex;
+      padding: 0;
+      list-style-type: none;
 
-.title-bar a:link,
-.title-bar a:visited {
-  text-decoration: none;
-  color: white;
-}
+      li {
+        a {
+          padding: 1em;
 
-.title-bar a:hover {
-  text-decoration: underline;
-  background: darken(black, 10%);
-  color: #fde91a;
-  border-radius: 10px;
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: white;
+          }
+
+          &:hover {
+            text-decoration: underline;
+            background: darken(black, 10%);
+            color: $yellow;
+            border-radius: 10px;
+          }
+
+          @media (max-width: 700px) {
+            padding: 0;
+
+            &:hover {
+              background: none;
+            }
+          }
+        }
+
+        @media (max-width: 700px) {
+          margin: 10px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        @include block-disposal(flex, wrap, center);
+        align-content: space-between;
+      }
+    }
+
+    @media (max-width: 700px) {
+      margin: 0px 30px;
+    }
+  }
 }

@@ -1,14 +1,46 @@
-.container li {
-  margin: 10px 0px 0px 10px;
+@import "./../../scss/variables.scss";
+
+body {
+  background-size: auto;
 }
 
-.container a:link,
-a:visited {
-  text-decoration: none;
-  color: white;
-}
+.container {
+  .search-bar {
+    display: flex;
+    justify-content: center;
 
-.container a:hover {
-  text-decoration: underline;
-  color: #fde91a;
+    input {
+      color: white;
+      background-color: black;
+      border: 3px solid $purple;
+      border-radius: 20px;
+      padding-left: 30px;
+      //background-image: url("../../../assets/images/search.png");
+      background-position: 5px 3px;
+      background-repeat: no-repeat;
+      font-family: "Russo One", sans-serif;
+      height: 20px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  li {
+    margin: 10px 0px 0px 10px;
+
+    a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: white;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        color: $yellow;
+      }
+    }
+  }
 }

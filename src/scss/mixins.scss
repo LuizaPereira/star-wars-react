@@ -1,0 +1,14 @@
+@mixin block-detail($bg-color, $font-color, $border-color) {
+  background-color: $bg-color;
+  color: $font-color;
+  margin: 10px;
+  padding: 10px;
+  border: solid 5px $border-color;
+  border-radius: 10px;
+}
+
+@mixin block-disposal($display, $wrap, $justify-content) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
+}
