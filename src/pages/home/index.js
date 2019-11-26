@@ -27,7 +27,7 @@ export default class Home extends Component {
         <ul>
           {movies.map(movie => (
             <li key={movie.episode_id}>
-              <a href="/">
+              <a href={`/movies/${movie.episode_id}`}>
                 Episode {movie.episode_id} : {movie.title}
               </a>
             </li>
