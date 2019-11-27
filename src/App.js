@@ -4,7 +4,7 @@ import Routes from './routes';
 import Header from './components/header';
 import './styles.scss';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Header />
@@ -12,5 +12,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

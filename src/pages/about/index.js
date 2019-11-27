@@ -8,7 +8,7 @@ import email from '../../assets/images/email.png';
 
 const About = () => (
   <div className="container">
-    <h1> Angular Challenge </h1>
+    <h1> React.js Challenge </h1>
     <div className="about-detail">
       <p>
         My name is Luiza Pereira, I am a JT (Jovem Talento, Young Talent) at

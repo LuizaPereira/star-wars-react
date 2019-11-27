@@ -23,7 +23,7 @@ export default class Home extends Component {
     const { movies } = this.state;
 
     return (
-      <div className="container">
+      <div className="container-home">
         <ul>
           {movies.map(movie => (
             <li key={movie.episode_id}>

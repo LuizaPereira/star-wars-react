@@ -1,10 +1,16 @@
 @import "./../../scss/variables.scss";
+@import "./../../scss/mixins.scss";
 
 body {
   background-size: auto;
 }
 
-.container {
+.container-home {
+  margin: 40px;
+  background: black;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
   .search-bar {
     display: flex;
     justify-content: center;
@@ -15,7 +21,7 @@ body {
       border: 3px solid $purple;
       border-radius: 20px;
       padding-left: 30px;
-      //background-image: url("../../../assets/images/search.png");
+      background-image: url("../../assets/images/search.png");
       background-position: 5px 3px;
       background-repeat: no-repeat;
       font-family: "Russo One", sans-serif;
@@ -27,19 +33,29 @@ body {
     }
   }
 
-  li {
-    margin: 10px 0px 0px 10px;
+  ul {
+    @include block-disposal(flex, none, center);
+    flex-direction: column;
+    align-items: center;
 
-    a {
-      &:link,
-      &:visited {
-        text-decoration: none;
-        color: white;
-      }
+    li {
+      @include block-detail(white, black, $purple);
+      @include block-disposal(flex, none, center);
+      text-align: center;
+      width: 70%;
 
-      &:hover {
-        text-decoration: underline;
-        color: $yellow;
+      a {
+        padding: 10px;
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: black;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          text-shadow: 5px 5px 5px lighten($color: $purple, $amount: 0);
+        }
       }
     }
   }
