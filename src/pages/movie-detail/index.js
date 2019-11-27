@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// import { Container } from './styles';
-
-export default class Movie extends Component {
-  render() {
-    return <div />;
-  }
+export default function Movie() {
+  return (
+    <div className="container">
+      <h1> BATATA </h1>
+    </div>
+  );
 }
