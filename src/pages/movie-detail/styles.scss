@@ -1,0 +1,87 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
+.container {
+  h1 {
+    margin: 20px 0px;
+    color: $yellow;
+  }
+
+  .sub-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .movie-crawl {
+    padding: 0 60px;
+    margin: 20px 0px;
+  }
+
+  .characters-block {
+    .characters-list {
+      @include block-disposal(flex, wrap, space-evenly);
+
+      .characters-detail {
+        @include block-detail(white, black, $yellow);
+      }
+    }
+  }
+
+  .planets-block {
+    h1 {
+      color: $blue;
+    }
+
+    .planets-list {
+      @include block-disposal(flex, wrap, space-evenly);
+
+      .planets-detail {
+        @include block-detail(white, black, $blue);
+      }
+    }
+  }
+
+  .species-block {
+    h1 {
+      color: $purple;
+    }
+
+    .species-list {
+      @include block-disposal(flex, wrap, space-evenly);
+
+      .species-detail {
+        @include block-detail(white, black, $purple);
+      }
+    }
+  }
+
+  .starships-block {
+    h1 {
+      color: $pink;
+    }
+
+    .starships-list {
+      @include block-disposal(flex, wrap, space-evenly);
+
+      .starships-detail {
+        @include block-detail(white, black, $pink);
+      }
+    }
+  }
+
+  .vehicles-block {
+    h1 {
+      color: $red;
+    }
+
+    .vehicles-list {
+      @include block-disposal(flex, wrap, space-evenly);
+
+      .vehicles-detail {
+        @include block-detail(white, black, $red);
+      }
+    }
+  }
+}
