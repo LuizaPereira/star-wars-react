@@ -18,16 +18,35 @@ export default function Movie(props) {
     fetchData();
   }, [props.match.params.id]);
 
-  const fetchDetails = details => {
+  const fetchDetails = (details, mappedAttributes) => {
+    // console.log(details);
+    console.log(mappedAttributes);
     details && details.map(detail => {});
 
-    // console.log(details);
     return (
       <li>
         <p>batata</p>
       </li>
     );
   };
+
+  // Angular Example
+
+  // ngOnInit() {
+  //   const keys: string[] = Object.keys(this.object)
+  //     .filter(key => this.filterKeys(key)
+  //     )
+
+  //   this.informations = keys.map(key => ({
+  //     title: key,
+  //     description: this.object[key]
+  //   })
+  //   )
+  // }
+
+  // filterKeys(key: string) {
+  //   return this.mappedAttributes.indexOf(key) !== -1 && key !== this.title
+  // }
 
   return (
     <div className="container">
@@ -45,7 +64,9 @@ export default function Movie(props) {
 
       <div className="characters-block">
         <h1>Characters</h1>
-        <ul className="characters-list">{fetchDetails(movie.characters)}</ul>
+        <ul className="characters-list">
+          {fetchDetails(movie.characters, ['gender', 'height', 'hair_color'])}
+        </ul>
       </div>
     </div>
   );
