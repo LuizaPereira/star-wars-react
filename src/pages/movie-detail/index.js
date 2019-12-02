@@ -42,18 +42,7 @@ export default function Movie(props) {
         batata.push(data);
       });
 
-    setCharacters(...characters, batata);
-
-    // search.map(teste => {
-    //   console.log(teste);
-
-    // });
-    // const b = search.substr(21, 25);
-    // const response = await api.get(`${b}`);
-    // const { data } = response;
-
-    // //console.log(data);
-    // return data;
+    //setCharacters(...characters, batata);
   }
 
   // Angular Example
