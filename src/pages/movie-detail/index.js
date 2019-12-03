@@ -4,7 +4,7 @@ import api from './../../services/api';
 import './styles.scss';
 
 export default function Movie(props) {
-  const [movie, setMovies] = useState([]);
+  const [movie, setMovies] = useState({});
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -14,54 +14,32 @@ export default function Movie(props) {
       const movie = results.find(movie => {
         return `${movie.episode_id}` === `${props.match.params.id}`;
       });
+
       setMovies(movie);
     }
+
     fetchData();
   }, [props.match.params.id]);
 
-  const fetchDetails = (details, mappedAttributes, type) => {
-    //details && details.map(detail => {});
-    // const batata =
-    fetchDetail(details);
+  useEffect(() => {
+    const { characters } = movie;
 
-    return (
-      <li className={`${type}-list`}>
-        <p>batata</p>
-      </li>
-    );
-  };
+    function fetchDetails() {
+      characters &&
+        characters.forEach(async detail => {
+          const link = detail.substr(21, 25);
+          const response = await api.get(`${link}`);
+          const { data } = response;
+          setCharacters(state => [...state, data]);
+          return data;
+        });
+    }
+    fetchDetails();
+  }, [movie]);
 
-  async function fetchDetail(search) {
-    const batata = [];
-    search &&
-      search.map(async detail => {
-        const b = detail.substr(21, 25);
-        const response = await api.get(`${b}`);
-        const { data } = response;
-
-        batata.push(data);
-      });
-
-    //setCharacters(...characters, batata);
-  }
-
-  // Angular Example
-
-  // ngOnInit() {
-  //   const keys: string[] = Object.keys(this.object)
-  //     .filter(key => this.filterKeys(key)
-  //     )
-
-  //   this.informations = keys.map(key => ({
-  //     title: key,
-  //     description: this.object[key]
-  //   })
-  //   )
-  // }
-
-  // filterKeys(key: string) {
-  //   return this.mappedAttributes.indexOf(key) !== -1 && key !== this.title
-  // }
+  // useEffect(() => {
+  //   console.log(characters);
+  // }, [characters]);
 
   return (
     <div className="container">
@@ -80,11 +58,18 @@ export default function Movie(props) {
       <div className="characters-block">
         <h1>Characters</h1>
         <ul className="characters-list">
-          {fetchDetails(
-            movie.characters,
-            ['name', 'gender', 'height', 'hair_color'],
-            'characters'
-          )}
+          {characters.map(character => (
+            <div className="characters-detail" key={character.url}>
+              <h2>{character.name}</h2>
+              <ul>
+                <li key={character.url}>height : {character.height}</li>
+                <li key={character.homeworld}>
+                  hair color : {character.hair_color}
+                </li>
+                <li key={character.birth_year}>gender : {character.gender}</li>
+              </ul>
+            </div>
+          ))}
         </ul>
       </div>
     </div>
