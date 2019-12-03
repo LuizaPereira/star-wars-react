@@ -62,11 +62,9 @@ export default function Movie(props) {
             <div className="characters-detail" key={character.url}>
               <h2>{character.name}</h2>
               <ul>
-                <li key={character.url}>height : {character.height}</li>
-                <li key={character.homeworld}>
-                  hair color : {character.hair_color}
-                </li>
-                <li key={character.birth_year}>gender : {character.gender}</li>
+                <li>height : {character.height}</li>
+                <li>hair color : {character.hair_color}</li>
+                <li>gender : {character.gender}</li>
               </ul>
             </div>
           ))}
